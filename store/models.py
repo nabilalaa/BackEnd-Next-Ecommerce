@@ -19,7 +19,7 @@ class Category(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to="category/", blank=True)
-    urlImage = models.URLField(null=1,verbose_name="url image")
+    urlImage = models.URLField(null=1,verbose_name="url image",blank=True)
     price = models.IntegerField()
     description = models.TextField()
     category = models.ForeignKey("category", on_delete=models.DO_NOTHING, null=1,blank=True)
